@@ -4,6 +4,7 @@ import CRUD from './CRUD';
 import NewTask from './NewTask';
 import EditTask from './EditTask';
 import TasksProvider from './TasksProvider';
+import ViewTask from './ViewTask';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
             <Routes>
               <Route path="/" exact element={<CRUD/>} />
               <Route path="/new" exact element={<NewTask/>} />
-              <Route path="/posts/:id" element={<EditTask/>} />
+              <Route path="/posts/view/:id" element={<ViewTask/>} />
+              <Route path="/posts/edit/:id" element={<EditTask/>} />
             </Routes>
           </div>
         </div>

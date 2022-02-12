@@ -3,7 +3,7 @@ import {Link, useParams, useNavigate}  from 'react-router-dom';
 import './bootstrap.css';
 import TasksContext from './TasksContext';
 
-function EditTask() {
+function ViewTask() {
   const tasks = useContext(TasksContext);
   const id = useParams().id;
   const task = tasks.find(item => item.id == id);
@@ -39,12 +39,11 @@ function EditTask() {
         <h5 className="card-title">Kirill</h5>
         <h6 className="card-title">{task ? timeConverter(task.created) : false}</h6>
         <p className="card-text">{task ? task.content : false}</p>
-        <input className="form-control" type="text" aria-label="default input example" placeholder='Новое описание' onChange={handleChange}/>
-        <button className="btn btn-primary" onClick={sendTask}>Применить</button>
+        <Link to={`/posts/edit/${id}`} className="btn btn-primary">Редактировать</Link>
         <Link to="/" className="btn btn-warning">Назад</Link>
       </div>
     </div>
   )
 }
 
-export default EditTask;
+export default ViewTask;

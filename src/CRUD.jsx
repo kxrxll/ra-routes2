@@ -40,7 +40,7 @@ function CRUD() {
         <h5 className="card-title">Kirill</h5>
         <h6 className="card-title">{timeConverter(item.created)}</h6>
         <p className="card-text">{item.content}</p>
-        <Link to={`/posts/${item.id}`} className="btn btn-primary" item={item}>Редактировать</Link>
+        <Link to={`/posts/view/${item.id}`} className="btn btn-primary" item={item}>Посмотреть</Link>
         <button className="btn btn-warning" onClick={handleDelete} id={item.id}>Удалить</button>
       </div>
     </div>)}
